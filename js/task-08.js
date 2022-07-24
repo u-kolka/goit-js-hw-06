@@ -6,15 +6,15 @@ function onFormSubmit(event) {
   event.preventDefault();
   //   console.dir(event.currentTarget.elements);
 
-  const {
-    elements: { email, password },
-  } = event.currentTarget;
+  const elements = {};
+  elements.email = event.currentTarget;
+  elements.password = event.currentTarget;
 
-  if (email.value === "" || password.value === "") {
+  if (form.email.value === "" || form.password.value === "") {
     return alert("Please fill in all the fields!");
   }
-
-  console.log(`Email: ${email.value}, Password: ${password.value}`);
+  console.log(elements);
+  console.log(`Email: ${form.email.value}, Password: ${form.password.value}`);
 
   event.currentTarget.reset();
 }
